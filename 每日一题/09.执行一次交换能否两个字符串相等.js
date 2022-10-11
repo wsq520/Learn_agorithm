@@ -1,3 +1,5 @@
+// https://leetcode.cn/problems/check-if-one-string-swap-can-make-strings-equal/solution/
+
 var areAlmostEqual = function(s1, s2) {
   if(s1 === s2) return true
 
@@ -17,15 +19,7 @@ var areAlmostEqual = function(s1, s2) {
 
   if(str1.length !== 2 || str2.length !== 2) return false
 
-  console.log(str1[0], str1);
-  [str1[0], str1[1]] = [str1[1], str1[0]]
-  console.log(str1[0], str1);
-  console.log(str1, str2);
-  
+  str1 = str1[1] + str1[0]
+
   return str1 === str2
 };
-areAlmostEqual("bank", "kanb")
-
-const arr = [1, 2]
-[arr[0], arr[1]] = [arr[1], arr[0]]
-console.log(arr);

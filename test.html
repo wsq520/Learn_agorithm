@@ -8,13 +8,13 @@
 </head>
 <body>
     <script>
-      debugger
-      let i = 0
-      for(let j = 0; j < 5; j++) {
-        i = i + 1
-      }
-
-
+      const message = "sadbutsad"
+      const str = "sad"
+      const re = new RegExp(str, "ig")
+      console.log(message.matchAll(re).next().value.index)
+      // for(const item of message.matchAll(re)) {
+      //   console.log(item)
+      // }
     </script>
     
 </body>
