@@ -6,4 +6,9 @@ arr.every(i => {
   }
 })
 
-console.log(1111)
+console.log(arr[-1])
+
+console.log([].pop());
+
+const map = new Map([["+",'hhhh'], ["-",'hhhh']])
+console.log(map);
