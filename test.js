@@ -1,22 +1,15 @@
-function topKFrequent(nums, k) {
-  const map = new Map()
-  let res = []
-  for (let i = 0; i < nums.length; i++) {
-    if (!map.has(nums[i])) {
-      map.set(nums[i], 1)
-    } else {
-      map.set(nums[i], map.get(nums[i]) + 1)
-    }
+function countConsistentStrings(allowed, words) {
+  const set = new Set(allowed)
+  let res = 0
+  for(const word of words) {
+      for(const char of word) {
+          if(!set.has(char)) {
+              continue
+          }
+      }
+      res++
   }
-  let arr = Array.from(map)
-  arr.sort((a, b) => {
-    return b[1] - a[1]
-  })
-  for (let i = 0; i < k; i++) {
-    res.push(arr[i][0])
-  }
-  console.log(arr)
-  console.log(res)
+  return res
 };
 
 const arr = [1,1,1,2,2,3]
