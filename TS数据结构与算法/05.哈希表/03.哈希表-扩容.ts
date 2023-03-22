@@ -15,7 +15,24 @@ class HashTable<T = any> {
     return index
   }
 
+  private isPrime(num: number): boolean {
+    const len = Math.floor(Math.sqrt(num))
+
+    for (let i = 2; i <= len; i++) {
+      if (num % i === 0) return false
+    }
+
+    return true
+  }
+
   private resize(newLength: number) {
+    // 如果长度不是一个质数 就得找出接近该值的质数
+    while (!this.isPrime(newLength)) {
+      newLength++
+    }
+
+    if (newLength < 7) newLength = 7
+
     this.length = newLength
 
     // 将原来的数据填充到新的数组中
